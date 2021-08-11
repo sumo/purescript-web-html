@@ -8,6 +8,8 @@ name": "purescript-web-html",
   }
 -}
 { name = "web-html"
+, license = "MIT"
+, repository = "https://github.com/purescript-web/purescript-web-html.git"
 , dependencies =
   [ "aff"
   , "aff-promise"

@@ -1,6 +1,9 @@
 "use strict";
 
-exports.getUserMedia_ = (mediaDevices, constraints) => () => {
-    console.log(constraints)
-    return mediaDevices.getUserMedia(constraints);
+exports.getUserMedia_ = function (mediaDevices) {
+  return function (constraints) {
+    return function () {
+      return mediaDevices.getUserMedia(constraints);
+    };
+  };
 };

@@ -14,7 +14,6 @@
 module Web.HTML.MediaDevices where
 
 import Control.Promise (Promise, toAffE)
-import Data.Function.Uncurried (Fn2, runFn2)
 import Effect (Effect)
 import Effect.Aff (Aff)
 import Web.HTML.MediaTrackConstraints (MediaStreamConstraints, MediaStreamConstraints_, toNativeMediaStreamConstraints)
@@ -23,8 +22,8 @@ foreign import data MediaDevices :: Type
 
 foreign import data MediaStream :: Type
 
-foreign import getUserMedia_ :: Fn2 MediaDevices MediaStreamConstraints_ (Effect (Promise MediaStream))
+foreign import getUserMedia_ :: MediaDevices -> MediaStreamConstraints_ -> (Effect (Promise MediaStream))
 
 getUserMedia :: MediaDevices -> MediaStreamConstraints -> Aff MediaStream
-getUserMedia md msc = toAffE (runFn2 getUserMedia_ md (toNativeMediaStreamConstraints msc))
+getUserMedia md msc = toAffE (getUserMedia_ md (toNativeMediaStreamConstraints msc))
 

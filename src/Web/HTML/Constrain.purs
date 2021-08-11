@@ -88,8 +88,7 @@ type ConstrainRange_ a
 type ConstrainableRange a
   = OneOf a (ConstrainRange_ a)
 
-constrainedRange ::
-  forall a.
+constrainedRange :: forall a.
   InOneOf
     (ConstrainRange_ a)
     a
@@ -107,13 +106,7 @@ type ConstrainArray_ a
 type ConstrainableArray a
   = OneOf (Array a) (ConstrainArray_ a)
 
-constrainedArray ::
-  forall a.
-  InOneOf
-    (ConstrainArray_ a)
-    a
-    (ConstrainArray_ a) =>
-  ConstrainedArray a -> ConstrainableArray a
+constrainedArray :: forall a . ConstrainedArray a -> ConstrainableArray a
 constrainedArray (Single a) = asOneOf (fromFoldable [ a ])
 
 constrainedArray (PlainArray a) = asOneOf (fromFoldable a)

@@ -67,7 +67,7 @@ exports.setPoster = function (poster) {
 exports.srcObject = function (mediaStream) {
   return function (video) {
     return function () {
-      return video.srcObject = mediaStream;
-    }
+      video.srcObject = mediaStream;
+    };
   };
 };

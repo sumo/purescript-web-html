@@ -9,23 +9,32 @@ name": "purescript-web-html",
 -}
 { name = "web-html"
 , dependencies =
-  [ "effect"
+  [ "aff"
+  , "aff-promise"
+  , "arrays"
+  , "effect"
+  , "either"
   , "enums"
   , "foreign"
   , "functions"
   , "js-date"
+  , "lists"
+  , "literals"
   , "maybe"
   , "media-types"
   , "newtype"
   , "nullable"
   , "prelude"
   , "psci-support"
+  , "record"
+  , "strings"
   , "unsafe-coerce"
+  , "untagged-union"
   , "web-dom"
   , "web-events"
   , "web-file"
   , "web-storage"
   ]
 , packages = ./packages.dhall
-, sources = [ "src/**/*.purs" ]
+, sources = [ "src/**/*.purs", "test/**/*.purs" ]
 }

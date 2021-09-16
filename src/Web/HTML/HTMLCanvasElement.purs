@@ -8,6 +8,7 @@ import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.Internal.FFI (unsafeReadProtoTagged)
+import Web.HTML.HTMLCanvasElement.Context
 
 foreign import data HTMLCanvasElement :: Type
 
@@ -53,16 +54,19 @@ toParentNode = unsafeCoerce
 toEventTarget :: HTMLCanvasElement -> EventTarget
 toEventTarget = unsafeCoerce
 
+renderingContext2D :: HTMLCanvasElement -> Effect CanvasRenderingContext2D
+renderingContext2D elem = getContext "2d" elem
 
--- typedef (CanvasRenderingContext2D or WebGLRenderingContext) RenderingContext;
+renderingContextWebGL :: HTMLCanvasElement -> Effect WebGLRenderingContext
+renderingContextWebGL elem = getContext "webgl" elem
+
+foreign import getContext :: forall a.  String -> HTMLCanvasElement -> Effect a
 
 foreign import width :: HTMLCanvasElement -> Effect Int
 foreign import setWidth :: Int -> HTMLCanvasElement -> Effect Unit
 
 foreign import height :: HTMLCanvasElement -> Effect Int
 foreign import setHeight :: Int -> HTMLCanvasElement -> Effect Unit
-
---   RenderingContext? getContext(DOMString contextId, any... arguments);
 
 --   DOMString toDataURL(optional DOMString type, any... arguments);
 --   void toBlob(FileCallback? _callback, optional DOMString type, any... arguments);

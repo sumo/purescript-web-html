@@ -29,3 +29,9 @@ exports.userAgent = function (navigator) {
     return navigator.userAgent;
   };
 };
+
+exports.mediaDevices = function (navigator) {
+  return function () {
+    return navigator.mediaDevices;
+  };
+};

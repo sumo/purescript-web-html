@@ -9,6 +9,7 @@ import Web.DOM (ChildNode, Element, Node, NonDocumentTypeChildNode, ParentNode)
 import Web.Event.EventTarget (EventTarget)
 import Web.HTML.HTMLElement (HTMLElement)
 import Web.HTML.HTMLMediaElement (HTMLMediaElement)
+import Web.HTML.MediaDevices (MediaStream)
 import Web.Internal.FFI (unsafeReadProtoTagged)
 
 foreign import data HTMLVideoElement :: Type
@@ -72,3 +73,5 @@ foreign import videoHeight :: HTMLVideoElement -> Effect Int
 
 foreign import poster :: HTMLVideoElement -> Effect String
 foreign import setPoster :: String -> HTMLVideoElement -> Effect Unit
+
+foreign import srcObject :: MediaStream -> HTMLVideoElement -> Effect Unit

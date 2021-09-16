@@ -10,6 +10,9 @@ New features:
 - Added `languages` value for `Navigator` (#59 by @toastal)
 - Added `HTMLHtmlElement` module and `documentElement` function `HTMLDocument` (#60 by @toastal)
 - Added `onLine` value for `Navigator` (#61 by @toastal)
+- Added `mediaDevices` value for `Navigator`
+- Added MediaTrack support
+- Added `srcObject` atrribute to HTMLVideoElement
 
 Bugfixes:
 

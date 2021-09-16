@@ -29,3 +29,13 @@ exports.setHeight = function (height) {
     };
   };
 };
+
+// ------------------------------------------------------------------------------
+
+exports.getContext = function (ctxType) {
+  return function (canvas) {
+    return function () {
+      return canvas.getContext(ctxType);
+    };
+  };
+};

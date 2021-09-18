@@ -38,7 +38,8 @@
     "purescript-web-dom": "^v5.0.0",
     "purescript-web-events": "^v3.0.0",
     "purescript-web-file": "^v3.0.0",
-    "purescript-web-storage": "^v4.0.0"
+    "purescript-web-storage": "^v4.0.0",
+    "purescript-arraybuffer-types": "^v3.0.1"
   },
   "resolutions": {
     "purescript-foreign": "^v6.0.1"

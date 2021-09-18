@@ -13,6 +13,7 @@ name": "purescript-web-html",
 , dependencies =
   [ "aff"
   , "aff-promise"
+  , "arraybuffer-types"
   , "arrays"
   , "effect"
   , "either"

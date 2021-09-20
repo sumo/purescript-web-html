@@ -88,7 +88,7 @@ exports.getImageData = function (sx) {
       return function (sh) {
         return function (ctx2d) {
           return function () {
-            ctx2d.getImageData(sx, sy, sw, sh);
+            return ctx2d.getImageData(sx, sy, sw, sh);
           };
         };
       };
@@ -101,7 +101,7 @@ exports.createImageData = function (w) {
   return function (h) {
     return function (ctx2d) {
       return function () {
-        ctx2d.createImageData(w, h);
+        return ctx2d.createImageData(w, h);
       };
     };
   };

@@ -44,4 +44,4 @@ foreign import getImageData :: Int -> Int -> Int -> Int -> CanvasRenderingContex
 
 foreign import createImageData :: Int -> Int -> CanvasRenderingContext2D -> Effect ImageData
 
-foreign import putImageData :: Int -> Int -> CanvasRenderingContext2D -> Effect ImageData
+foreign import putImageData :: Int -> Int -> CanvasRenderingContext2D -> Effect Unit
